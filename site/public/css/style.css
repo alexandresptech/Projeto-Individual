@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@font-face {
+    font-family: 'Roman';
+    src: url(../assets/roman_sd/Roman\ SD.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+a{
+    text-decoration: none;
+}
+
+/* ----- Posição ----- */
+
+.flex{
+    display: flex;
+}
+.center{
+    justify-content: center;
+}
+.align{
+    align-items: center;
+}
+.cet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column{
+    flex-direction: column;
+}
+.around{
+    justify-content: space-around;
+}
+.start{
+    justify-content: start;
+}
+.end{
+    justify-content: end;
+}
+
+/* ----- Header ----- */
+
+.header_site{
+    height: 10vh;
+}
+.div_header_site{
+    height: 100%;
+    width: 33.3%;
+}
+.img_logo_header{
+    height: 100%;
+}
+#div_nome_logo_header{
+    height: 100%;
+}
+.nome_logo_header{
+    font-family: 'Roman'; 
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+}
+.li_header_site{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    list-style: none;
+}
+.button_header{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    height: 40px;
+    width: 100px;
+    margin: 20px;
+    cursor: pointer;
+}
+.header_sistema{
+    height: 10vh;
+}
+
+/* ----- Footer ----- */
+
+footer{
+    background-color: black;
+    height: 100px;
+}
+.texto_footer{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+/* ----- Site ----- */
+
+#main_site{
+    height: 90vh;
+}
+#div_img_main_site{
+    background-image: url(../assets/imgs/img-home-site.jpg);
+    background-size: cover;
+    width: 40%;
+    height: 100%;
+}
+#div_texto_main_site{
+    background-color: black;
+    width: 60%;
+    height: 100%;
+}
+.h1_site{
+    font-family: 'Roman'; 
+    font-weight: 400;
+    font-size: 64px;
+    color: white;
+    text-align: center;
+}
+.p_home_site{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* ----- Cadastro e Login ----- */
+
+.main_cadlog{
+    height: 90vh;
+}
+.div_imagem_cadlog{
+    width: 65%;
+    background-size: cover;
+}
+.div_formulario_cadlog{
+    width: 35%;
+    background-color: white;
+}
+#div_imagem_cadastro{
+    background-image: url(../assets/imgs/img-cadastro.jpg);
+}
+#div_imagem_login{
+    background-image: url(../assets/imgs/img-login.jpg);
+}
+.titulo_cadlog{
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 48px;
+}
+.input_cadlog{
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-style: solid;
+    height: 40px;
+    width: 70%;
+    margin: 15px 0px 15px 0px;
+    padding: 0px 5% 0px 5%;
+}
+.input_cadlog_top{
+    margin-top: 80px;
+}
+.button_cadlog{
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 80%;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
