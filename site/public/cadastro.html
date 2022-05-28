@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Cadastro</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="icon" href="assets/imgs/logo-navegador.png">
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
     <header class="flex align around">
         <div class="div_header_site flex align start">
-            <a href="../public/index.html"><img src="../public/assets/imgs/logo.png" class="img_logo_header"></a>
+            <a href="index.html"><img src="assets/imgs/logo.png" class="img_logo_header"></a>
             <div id="div_nome_logo_header" class="flex center column">
-                <a href="../public/index.html"><h3 class="nome_logo_header">Mitologia</h3></a>
-                <a href="../public/index.html"><h3 class="nome_logo_header">Grega</h3></a>
+                <a href="index.html"><h3 class="nome_logo_header">Mitologia</h3></a>
+                <a href="index.html"><h3 class="nome_logo_header">Grega</h3></a>
             </div>
         </div>
         <div class="div_header_site" style="display: none;">
@@ -27,8 +31,8 @@
             </nav>
         </div>
         <div class="div_header_site flex align end">
-            <a href="../public/login.html"><button class="button_header">Entrar</button></a>
-            <a href="../public/cadastro.html"><button class="button_header">Cadastrar</button></a>
+            <a href="login.html"><button class="button_header">Entrar</button></a>
+            <a href="cadastro.html"><button class="button_header">Cadastrar</button></a>
         </div>
     </header>
     <main class="flex main_cadlog">
@@ -45,69 +49,61 @@
 
     <script>
         function cadastrar() {
-            aguardar();
-    
-            //Recupere o valor da nova input pelo nome do id
-            // Agora vá para o método fetch logo abaixo
-            var nomeVar = nome_input.value;
-            var emailVar = email_input.value;
-            var senhaVar = senha_input.value;
-            var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    
-            if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-                cardErro.style.display = "block"
-                mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-    
-                finalizarAguardar();
-                return false;
-            }
-            else {
-                setInterval(sumirMensagem, 5000)
-            }
-    
-            // Enviando o valor da nova input
-            fetch("/usuarios/cadastrar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
-                    nomeServer: nomeVar,
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
-                })
-            }).then(function (resposta) {
-    
-                console.log("resposta: ", resposta);
-    
-                if (resposta.ok) {
-                    cardErro.style.display = "block";
-    
-                    mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-    
-                    setTimeout(() => {
-                        window.location = "login.html";
-                    }, "2000")
-                    
-                    limparFormulario();
-                    finalizarAguardar();
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-                finalizarAguardar();
-            });
-    
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            Swal.fire('Por favor, insira todos os campos corretamente.')
+
             return false;
         }
-    
-        function sumirMensagem() {
-            cardErro.style.display = "none"
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                Swal.fire('')
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Cadastro realizado com sucesso!',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
         }
-    
     </script>
 </body>
 </html>

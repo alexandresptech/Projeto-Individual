@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="icon" href="assets/imgs/logo-navegador.png">
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
     <header class="flex align around">
         <div class="div_header_site flex align start">
-            <a href="../public/index.html"><img src="../public/assets/imgs/logo.png" class="img_logo_header"></a>
+            <a href="index.html"><img src="assets/imgs/logo.png" class="img_logo_header"></a>
             <div id="div_nome_logo_header" class="flex center column">
-                <a href="../public/index.html"><h3 class="nome_logo_header">Mitologia</h3></a>
-                <a href="../public/index.html"><h3 class="nome_logo_header">Grega</h3></a>
+                <a href="index.html"><h3 class="nome_logo_header">Mitologia</h3></a>
+                <a href="index.html"><h3 class="nome_logo_header">Grega</h3></a>
             </div>
         </div>
         <div class="div_header_site" style="display: none;">
@@ -27,8 +31,8 @@
             </nav>
         </div>
         <div class="div_header_site flex align end">
-            <a href="../public/login.html"><button class="button_header">Entrar</button></a>
-            <a href="../public/cadastro.html"><button class="button_header">Cadastrar</button></a>
+            <a href="login.html"><button class="button_header">Entrar</button></a>
+            <a href="cadastro.html"><button class="button_header">Cadastrar</button></a>
         </div>
     </header>
     <main class="flex main_cadlog">
@@ -43,74 +47,68 @@
 
     <script>
         function entrar() {
-            aguardar();
-    
-            var emailVar = email_input.value;
-            var senhaVar = senha_input.value;
-    
-            if (emailVar == "" || senhaVar == "") {
-                cardErro.style.display = "block"
-                mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-                finalizarAguardar();
-                return false;
-            }
-            else {
-                setInterval(sumirMensagem, 5000)
-            }
-    
-            console.log("FORM LOGIN: ", emailVar);
-            console.log("FORM SENHA: ", senhaVar);
-    
-            fetch("/usuarios/autenticar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
-                })
-            }).then(function (resposta) {
-                console.log("ESTOU NO THEN DO entrar()!")
-    
-                if (resposta.ok) {
-                    console.log(resposta);
-    
-                    resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
-    
-                        sessionStorage.EMAIL_USUARIO = json.email;
-                        sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_USUARIO = json.id;
-    
-                        setTimeout(function () {
-                            window.location = "./dashboard/cards.html";
-                        }, 1000); // apenas para exibir o loading
-    
-                    });
-    
-                } else {
-    
-                    console.log("Houve um erro ao tentar realizar o login!");
-    
-                    resposta.text().then(texto => {
-                        console.error(texto);
-                        finalizarAguardar(texto);
-                    });
-                }
-    
-            }).catch(function (erro) {
-                console.log(erro);
-            })
-    
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            Swal.fire('Por favor, insira todos os campos corretamente.')
             return false;
         }
-    
-        function sumirMensagem() {
-            cardErro.style.display = "none"
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'Login ou senha inválido(s).',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
         }
-    
     </script>
 </body>
 </html>
