@@ -45,6 +45,12 @@ a{
 .end{
     justify-content: end;
 }
+.h_100{
+    height: 100%;
+}
+.w_50{
+    width: 50%;
+}
 
 /* ----- Header ----- */
 
@@ -111,20 +117,57 @@ footer{
 #div_img_main_site{
     background-image: url(../assets/imgs/img-home-site.jpg);
     background-size: cover;
-    width: 40%;
-    height: 100%;
 }
-#div_texto_main_site{
+#sobre_site{
+    height: 100vh;
+}
+#div_img_sobre_site{
+    background-image: url(../assets/imgs/img-sobre-site.jpg);
+    background-size: cover;
+}
+#jogo_site{
+    height: 100vh;
+}
+#div_img_jogo_site{
+    background-image: url(../assets/imgs/img-jogo-site.jpg);
+    background-size: cover;
+}
+.box_texto_site{
+    width: 80%;
+    height: 80%;
+}
+.h2_info_site{
+    font-family: 'Roman'; 
+    font-weight: 400;
+    font-size: 3rem;
+    color: white;
+}
+.p_info_site{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    margin-top: 80px;
+}
+#button_jogo_site{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
     background-color: black;
-    width: 60%;
-    height: 100%;
+    border: 2px solid white;
+    height: 40px;
+    width: 150px;
+    margin-top: 50px;
+    cursor: pointer;
 }
 .h1_site{
     font-family: 'Roman'; 
     font-weight: 400;
-    font-size: 64px;
+    font-size: 3rem;
     color: white;
     text-align: center;
+    margin: 10px;
 }
 .p_home_site{
     font-family: 'EB Garamond', serif; 
@@ -133,6 +176,22 @@ footer{
     color: white;
     text-align: center;
     margin-top: 80px;
+}
+#contato_site{
+    height: 40vh;
+}
+.h2_contato_site{
+    font-family: 'Roman'; 
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+}
+.p_contato_site{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    margin-top: 50px;
 }
 
 /* ----- Cadastro e Login ----- */
@@ -189,3 +248,5 @@ footer{
     margin-top: 30px;
     cursor: pointer;
 }
+
+/* ----- Sistema ----- */
