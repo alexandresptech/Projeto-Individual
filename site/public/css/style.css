@@ -93,7 +93,34 @@ a{
     cursor: pointer;
 }
 .header_sistema{
-    height: 10vh;
+    background-color: white;
+    height: 100%;
+    width: 10%;
+    position: fixed;
+}
+.div_header_sistema{
+    width: 100%;
+    height: 20%;
+}
+.img_logo_sistema{
+    width: 100%;
+}
+.h4_header_sistema{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+.button_header_sistema{
+    font-family: 'EB Garamond', serif; 
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    height: 40px;
+    width: 80%;
+    cursor: pointer;
 }
 
 /* ----- Footer ----- */
@@ -250,3 +277,9 @@ footer{
 }
 
 /* ----- Sistema ----- */
+
+.main_sistema{
+    height: 100vh;
+    width: 90%;
+    margin-left: 10%;
+}
