@@ -23,15 +23,3 @@ function limparSessao() {
     // finalizarAguardar();
     window.location = "../login.html";
 }
-
-// modal
-function mostrarModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "flex";
-}
-
-function fecharModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "none";
-}
-
