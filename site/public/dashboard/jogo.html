@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitologia Grega</title>
+    <link rel="icon" href="../assets/imgs/logo-navegador.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cet">
+        <div class="div_header_site cet">
+            <img src="../assets/imgs/logo.png" class="img_logo_header">
+        </div>
+        <div class="div_header_site">
+            <nav>
+                <ul class="flex align around">
+                    <a href="historia.html"><li class="li_header_site">História</li></a>
+                    <a href="dashboard.html"><li class="li_header_site">Dashboard</li></a>
+                    <a href="jogo.html"><li class="li_header_site">Jogo</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="div_header_site cet">
+            <button class="button_header" onclick="limparSessao()">Sair</button>
+        </div>
+    </header>
+
+    <main id="main_jogo">
+        <div id="jogo_inicio" style="color: white;">
+            <div>
+                <h1>Jogo</h1>
+            </div>
+            <div>
+                <button id="btn_start" onclick="start()">Começar o Jogo</button>
+            </div>
+            <div>
+                <h2>Intruções do Jogo</h2><br><br>
+                <p>
+                    Clique em "Começar o Jogo" para iniciar uma partida <br><br>
+                    Perguntas serão exibidas na parte inferior do quadro <br><br>
+                    Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua
+                    resposta<br><br>
+                    A partida acaba quando as 16 questões forem respondidas <br><br>
+                </p>
+            </div>
+        </div>
+        <div id="jogando" class="flex" style="display: none;">
+            <div id="jogando_imagem"></div>
+            <div id="jogando_quiz">
+                <div id="div_coracao" class="cet">
+                    <div class="cet">
+                        <img src="../assets/imgs/img-coração.png" id="coracao_1" class="coracao">
+                        <img src="../assets/imgs/img-coração.png" id="coracao_2" class="coracao">
+                        <img src="../assets/imgs/img-coração.png" id="coracao_3" class="coracao">
+                    </div>
+                </div>
+                <div id="div_nome_criatura" class="cet">
+                    <h3 id="nome_criatura" class="h3_criatura">Medusa</h3>
+                </div>
+                <div id="div_quiz" class="cet column">
+                    <span id="span_pergunta">Qual é a sigla para Central Process Unit?</span>
+                    <input type="text" id="inp_resposta">
+                    <button id="btn_verificar" onclick="verificar()">Verificar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var perguntas = [
+            'Qual é a sigla para Central Process Unit?',
+            'Um circuto digital que realiza operações lógicas e aritméticas. Qual é o nome deste componente?',
+            'Tipo de memória que se encontra no topo da hierarquia de memória',
+            'Tipo de memória volátil que tem como nome Random Acess Memory. Qual é a sigla deste componente?',
+            'Tipo de memória não volátil que oferece dados apenas para leitura',
+            'Tipo de memória não volátil que precisa ter seu chip exposto a luz ultravioleta para apagar seu conteúdo',
+            'Tipo particular de EEPROM que mantém as informações armazenadas sem a necessidade de uma fonte de energia elétrica',
+            'Tipo de memória que precisa ter seu conteúdo copiado na RAM para poder ser executado pela CPU'
+        ]
+
+        var respostas = ['1', '2', '3', '4', '5', '6', '7', '8']
+
+        var criaturas = [
+            'Minotauro',  
+            'Esfinge', 
+            'Mantícora', 
+            'Hidra',
+            'Cérbero', 
+            'Medusa', 
+            'Tifão', 
+            'Cronos'
+        ]
+        
+        var contagem = 0
+
+        var vida = 3
+
+        var pontos = 0
+
+        function start() {
+            contagem = 0
+
+            jogo_inicio.style.display = 'none'
+            jogando.style.display = 'flex'
+
+            sequencia()
+        }
+
+        function end() {
+            jogo_inicio.style.display = 'block'
+            jogando.style.display = 'none'
+        }
+
+        function sequencia() {
+            span_pergunta.innerHTML = `${perguntas[contagem]}`
+            nome_criatura.innerHTML = `${criaturas[contagem]}`
+
+            if (contagem == 0) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-minotauro.jpg')"
+            } else if (contagem == 1) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-esfinge.jpg')"
+            } else if (contagem == 2) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-manticora.jpg')"
+            } else if (contagem == 3) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-hidra.jpg')"
+            } else if (contagem == 4) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-cerbero.jpg')"
+            } else if (contagem == 5) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-medusa.jpg')"
+            } else if (contagem == 6) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-tifao.jpg')"
+            } else if (contagem == 7) {
+                jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-cronos.jpg')"
+            } else if (contagem == 8) {
+                jogando.style.display = 'none'
+            }
+
+            if (vida == 2) {
+                coracao_1.style.opacity = '0'
+            } else if (vida == 1) {
+                coracao_3.style.opacity = '0'
+            } else if (vida == 0) {
+                coracao_2.style.opacity = '0'
+
+                setTimeout(function(){
+                    end()
+                },1500)
+            }
+        }
+
+        function verificar() {
+            var resposta = inp_resposta.value
+
+            if (resposta != '') {
+                if (resposta == respostas[contagem]) {
+                    contagem++
+                    pontos = pontos + 100
+                } else {
+                    vida--
+                }
+
+                inp_resposta.value = ''
+                sequencia()
+            }
+            else {
+                alert('Por Favor, digite uma resposta na caixa de texto')
+            }
+        }
+    </script>
+</body>
+</html>

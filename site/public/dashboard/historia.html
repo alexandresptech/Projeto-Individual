@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitologia Grega</title>
+    <link rel="icon" href="../assets/imgs/logo-navegador.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="cet">
+        <div class="div_header_site cet">
+            <img src="../assets/imgs/logo.png" class="img_logo_header">
+        </div>
+        <div class="div_header_site">
+            <nav>
+                <ul class="flex align around">
+                    <a href="historia.html"><li class="li_header_site">História</li></a>
+                    <a href="dashboard.html"><li class="li_header_site">Dashboard</li></a>
+                    <a href="jogo.html"><li class="li_header_site">Jogo</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="div_header_site cet">
+            <button class="button_header" onclick="limparSessao()">Sair</button>
+        </div>
+    </header>
+
+    <div id="div_conteudo" style="display: none;" class="cet column">
+        <div id="nav_conteudo" class="cet">
+            <div class="cet div_nav_conteudo">
+                <h5 id="h5_deuses" style="border-bottom: 1px solid white;" onclick="deuses()">Deuses</h5>
+            </div>
+            <div class="cet div_nav_conteudo">
+                <h5 id="h5_criaturas" onclick="criaturas()">Criaturas</h5>
+            </div>
+            <div class="cet div_nav_conteudo">
+                <h5 id="h5_herois" onclick="herois()">Heróis</h5>
+            </div>
+            <div class="cet div_nav_conteudo">
+                <h5 id="h5_historias" onclick="historias()">Histórias</h5>
+            </div>
+        </div>
+        <div id="main_conteudo" class="flex align column">
+            <div id="div_deuses" class="div_conteudo flex">
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-zeus.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Zeus</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="zeus()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-poseidon.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Poseidon</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="poseidon()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hades.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hades</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hades()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-atena.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Atena</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="atena()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-apolo.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Apolo</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="apolo()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-artemis.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Ártemis</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="artemis()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-ares.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Ares</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="ares()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-afrodite.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Afrodite</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="afrodite()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hera.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hera</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hera()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hermes.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hermes</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hermes()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hefesto.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hefesto</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hefesto()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-dionisio.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Dionísio</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="dionisio()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_criaturas" class="div_conteudo flex" style="display: none;">
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-minotauro.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Minotauro</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="minotauro()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-pegasus.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Pégasus</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="pegasus()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hipocampos.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hipocampo</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hipocampo()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-satiro.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Sátiro</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="satiro()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-cerbero.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Cérbero</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="cerbero()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-basilisco.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Basilisco</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="basilisco()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-esfinge.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Esfinge</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="esfinge()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-fenix.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Fênix</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="fenix()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-quimera.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Quimera</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="quimera()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-ciclope.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Ciclope</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="ciclope()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-centauro.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Centauro</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="centauro()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-harpia.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hárpia</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="harpia()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-medusa.webp" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Górgonas</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="gorgonas()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-ninfa.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Ninfa</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="ninfa()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-grifo.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Grifo</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="grifo()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hidra.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hidra</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hidra()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_herois" class="div_conteudo flex" style="display: none;">
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-hercules.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Hércules</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="hercules()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-teseu.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Teseu</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="teseu()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-atlanta.png" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Atlanta</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="atlanta()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-perseu.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Perseu</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="perseu()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-aquiles.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Aquiles</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="aquiles()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-edipo.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo">Édipo</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="edipo()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_historias" class="div_conteudo flex" style="display: none;">
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-historia-medusa.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo_historia">O mito da Medusa</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="historia_medusa()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-historia-icaro.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo_historia">A lenda de Ícaro</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="historia_icaro()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_conteudo_metade flex column align">
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-historia-minotauro.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo_historia">Teseu e Minotauro</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="historia_minotauro()">Conhecer</button>
+                        </div>
+                    </div>
+                    <div class="box_conteudo">
+                        <div class="box_conteudo_img">
+                            <img src="../assets/imgs/img-historia-midas.jpeg" class="img_conteudo">
+                        </div>
+                        <div class="box_conteudo_titulo cet">
+                            <h6 class="h6_conteudo_historia">O Rei Midas</h6>
+                        </div>
+                        <div class="box_conteudo_button cet">
+                            <button class="button_conteudo" onclick="historia_midas()">Conhecer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function deuses() {
+            h5_deuses.style.borderBottom = '1px solid white'
+            h5_criaturas.style.borderBottom = 'none'
+            h5_herois.style.borderBottom = 'none'
+            h5_historias.style.borderBottom = 'none'
+            div_deuses.style.display = 'flex'
+            div_criaturas.style.display = 'none'
+            div_herois.style.display = 'none'
+            div_historias.style.display = 'none'
+        }
+        function criaturas() {
+            h5_deuses.style.borderBottom = 'none'
+            h5_criaturas.style.borderBottom = '1px solid white'
+            h5_herois.style.borderBottom = 'none'
+            h5_historias.style.borderBottom = 'none' 
+            div_deuses.style.display = 'none'
+            div_criaturas.style.display = 'flex'
+            div_herois.style.display = 'none'
+            div_historias.style.display = 'none'
+        }
+        function herois() {
+            h5_deuses.style.borderBottom = 'none'
+            h5_criaturas.style.borderBottom = 'none'
+            h5_herois.style.borderBottom = '1px solid white'
+            h5_historias.style.borderBottom = 'none'
+            div_deuses.style.display = 'none'
+            div_criaturas.style.display = 'none'
+            div_herois.style.display = 'flex'
+            div_historias.style.display = 'none'
+        }
+        function historias() {
+            h5_deuses.style.borderBottom = 'none'
+            h5_criaturas.style.borderBottom = 'none'
+            h5_herois.style.borderBottom = 'none'
+            h5_historias.style.borderBottom = '1px solid white'
+            div_deuses.style.display = 'none'
+            div_criaturas.style.display = 'none'
+            div_herois.style.display = 'none'
+            div_historias.style.display = 'flex'
+        }
+    </script>
+</body>
+</html>
