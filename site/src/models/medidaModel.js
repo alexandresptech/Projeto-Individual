@@ -61,8 +61,20 @@ function buscarMedidasEmTempoReal(idMitologia) {
     return database.executar(instrucaoSql);
 }
 
+function inserirModel(pontos, idusuario) {
+    instrucaoSql = `insert into  values (
+                    null,
+                    ${pontos},
+                    ${idusuario}
+    )`
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    inserirModel
 }

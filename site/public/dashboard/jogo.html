@@ -135,6 +135,8 @@
                 jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-cronos.jpg')"
             } else if (contagem == 8) {
                 jogando.style.display = 'none'
+
+                inserir()
             }
 
             if (vida == 2) {
@@ -167,6 +169,28 @@
             else {
                 alert('Por Favor, digite uma resposta na caixa de texto')
             }
+        }
+
+        var idUsuario = sessionStorage.ID_USUARIO
+
+        function inserir() {
+            pontos
+            fetch("/medidas/inserir", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                pontos: pontos,
+                idUsuario: idUsuario
+            })
+            }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                console.log(json[0].Pontos);
+                })
+            }
+            })
         }
     </script>
 </body>
