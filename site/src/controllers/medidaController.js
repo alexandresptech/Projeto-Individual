@@ -43,8 +43,8 @@ function buscarMedidasEmTempoReal(req, res) {
 
 function inserirController(req, res) {
     var pontos = req.body.pontos;
-    var idusuario = req.body.idUsuario;
-    medidaModel.inserirModel(pontos, idusuario).then(function (resultado) {
+    var idpontos = req.body.idPontos;
+    medidaModel.inserirModel(pontos, idpontos).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

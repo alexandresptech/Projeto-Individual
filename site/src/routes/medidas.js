@@ -11,7 +11,7 @@ router.get("/tempo-real/:idMitologia", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
-router.post("/inserir", function (req, res) {
+router.post("/inserirPontos", function (req, res) {
     console.log('Chegou na rota Medidas!')
     medidaController.inserirController(req, res);
 });

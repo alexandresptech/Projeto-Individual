@@ -1,4 +1,4 @@
-function zeus() {
+/*function zeus() {
     Swal.fire({
         imageUrl: '../assets/imgs/img-zeus.jpeg',
         imageHeight: 500,
@@ -339,3 +339,4 @@ function historia_midas() {
         html: 'Midas era um rei, filho de Górdio, um camponês que foi feito rei pelo povo. Certa vez, o mestre e pai de criação do deus Baco, Sileno embriagou-se e se perdeu, foi encontrado pelo rei Midas que o tratou muito bem, oferecendo banquetes e cuidando dele. Baco resolveu presentear Midas, oferecendo a ele a oportunidade de escolher uma recompensa. O que Midas escolheu foi o poder de transformar tudo que ele tocava em ouro, assim, seu pedido foi atendido, porém Sileno ficou um pouco contrariado pois achou uma péssima escolha. Midas foi feliz, transformando tudo em ouro e riquezas, até o momento em que ele percebeu que não podia mais comer, pois toda comida e bebida que ele pegava ou engolia se transformava em ouro. Midas passou a odiar seu poder e pediu a Baco para livrá-lo daquela situação. Baco atendeu ao pedido e disse para Midas se lavar em um riacho e assim, acabar com o seu poder. Midas então se livrou daquilo e passou a ser um camponês, a odiar as riquezas e a adorar o deus Pã. Certa vez, Pã desafiou Apolo para uma disputa, queriam ver quem produzia a melhor música, e para isso, chamaram o deus Tmolo para julgar. Apolo venceu a disputa com a aprovação de todos, menos a de Midas, que apoiava o deus Pã, assim, Apolo puniu a Midas colocando nele orelhas de asno.'
     })
 }
+*/

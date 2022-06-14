@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header class="cet">
+    <header id="header_jogo" class="cet">
         <div class="div_header_site cet">
-            <img src="../assets/imgs/logo.png" class="img_logo_header">
+            <a href="index.html"><img src="../assets/imgs/logo.png" class="img_logo_header"></a>
         </div>
         <div class="div_header_site">
             <nav>
@@ -28,22 +28,23 @@
     </header>
 
     <main id="main_jogo">
-        <div id="jogo_inicio" style="color: white;">
-            <div>
-                <h1>Jogo</h1>
-            </div>
-            <div>
-                <button id="btn_start" onclick="start()">Começar o Jogo</button>
-            </div>
-            <div>
-                <h2>Intruções do Jogo</h2><br><br>
-                <p>
-                    Clique em "Começar o Jogo" para iniciar uma partida <br><br>
-                    Perguntas serão exibidas na parte inferior do quadro <br><br>
-                    Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua
-                    resposta<br><br>
-                    A partida acaba quando as 16 questões forem respondidas <br><br>
+        <div id="jogo_inicio" class="cet column">
+            <div class="cet column">
+                <h1 class="h1_regras">Desafio dos Deuses</h1>
+                <p class="p_regras">
+                    Os deuses precisam da sua ajuda para derrotar<br>
+                    os monstros e criaturas mais poderosos da Grécia.<br><br>
+                    Derrote-os um por um respondendo corretamente às perguntas<br>
+                    sobre a história dessa mitologia.<br><br>
+                    A cada oponente derrotado, você receberá uma quantidade de<br> 
+                    pontos para exibir suas conquistas como herói.<br><br>
+                    Mas cuidado, você só possui três corações e perde um<br> 
+                    toda vez que erra uma pergunta. Se perder todos, você<br> 
+                    será mandado direto para o Submundo.<br><br>
+                    Se você acha que está preparado para esse confronto, aperte<br> 
+                    em começar e os Deuses te levarão ao seu desafio.
                 </p>
+                <button id="btn_start" onclick="start()" class="button_regras">Começar</button>
             </div>
         </div>
         <div id="jogando" class="flex" style="display: none;">
@@ -64,6 +65,33 @@
                     <input type="text" id="inp_resposta">
                     <button id="btn_verificar" onclick="verificar()">Verificar</button>
                 </div>
+            </div>
+        </div>
+        <div id="jogo_ganhou" class="cet column telas_finais" style="display: none;">
+            <div class="cet column box_finais">
+                <h1 class="h1_ganhou">Parabéns herói!</h1>
+                <p class="p_ganhou">
+                    Você conseguiu derrotar todos os inimgos dos deuses<br>
+                    e agora será intitulado como novo herói da Grécia.<br><br>
+                    <b>Os Deuses lhe agradecem eternamente.</b><br><br>
+                    Clique no botão abaixo para receber sua glória como herói.
+                </p>
+                <a href="dashboard.html"><button onclick="inserir()" class="button_regras">Concluir</button></a>
+            </div>
+        </div>
+        <div id="jogo_perdeu" class="cet column telas_finais" style="display: none;">
+            <div class="cet column box_finais">
+                <h1 class="h1_regras">Você fracassou!</h1>
+                <p class="p_regras">
+                    Você foi derrotado em batalha e mandado para o<br>
+                    Submundo. infelizmente, provou não ser capaz <br>
+                    de cumprir a tarefa pedida.<br><br>
+                    <b>Os Deuses se decepcionaram.</b><br><br>
+                    Mas não se preocupe, você poderá retornar para<br>
+                    testar suas habilidades como herói outra vez.<br><br>
+                    Clique abaixo para retornar à Terra.
+                </p>
+                <a href="dashboard.html"><button onclick="inserir()" class="button_regras">Retornar</button></a>
             </div>
         </div>
     </main>
@@ -102,14 +130,22 @@
         function start() {
             contagem = 0
 
+            header_jogo.style.display = 'none'
             jogo_inicio.style.display = 'none'
             jogando.style.display = 'flex'
 
             sequencia()
         }
 
-        function end() {
-            jogo_inicio.style.display = 'block'
+        function endBom() {
+            header_jogo.style.display = 'flex'
+            jogo_ganhou.style.display = 'flex'
+            jogando.style.display = 'none'
+        }
+
+        function endRuim() {
+            header_jogo.style.display = 'flex'
+            jogo_perdeu.style.display = 'flex'
             jogando.style.display = 'none'
         }
 
@@ -134,9 +170,7 @@
             } else if (contagem == 7) {
                 jogando_imagem.style.backgroundImage = "url('../assets/imgs/img-jogo-cronos.jpg')"
             } else if (contagem == 8) {
-                jogando.style.display = 'none'
-
-                inserir()
+                endBom()
             }
 
             if (vida == 2) {
@@ -147,7 +181,7 @@
                 coracao_2.style.opacity = '0'
 
                 setTimeout(function(){
-                    end()
+                    endRuim()
                 },1500)
             }
         }
@@ -175,7 +209,7 @@
 
         function inserir() {
             pontos
-            fetch("/medidas/inserir", {
+            fetch("/medidas/inserirPontos", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
