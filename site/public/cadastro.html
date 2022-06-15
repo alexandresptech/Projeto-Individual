@@ -61,6 +61,11 @@
 
             return false;
         }
+        if (senhaVar != confirmacaoSenhaVar) {
+            Swal.fire('Por favor, insira a confirmação de senha corretamente.')
+
+            return false;
+        }
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
