@@ -9,36 +9,51 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header class="cet">
-        <div class="div_header_site cet">
-            <img src="../assets/imgs/logo.png" class="img_logo_header">
+    <main id="main_historia">
+        <a href="dashboard.html"><img id="img_x" src="../assets/imgs/img-x.png"></a>
+        <div id="page_1" class="pages cet column">
+            <p class="p_historia">
+                No início dos tempos, quando não havia nada além do Caos, A divindade Gaia surge como a Terra, dela nasce o seu filho Urano e ele se torna seu marido e soberano. Então, Gaia e Urano começam a ter filhos, dando origem às primeiras criaturas do mundo, os Ciclopes que eram gigantes de um olho só e os Hecatônquiros que eram gigantes com cem braços e cinquenta cabeças. Logo em seguida surgem os próximos filhos dos dois, Os Titãs, seres de imenso poder. Urano temendo o poder de seus filhos, lança todos eles ao Tártaro, a parte mais profunda da Terra. Em busca de vingança, o Titã Cronos que era o mais ambicioso de seus irmãos, foge do Tártaro e com a ajuda de sua mãe, castra o seu pai Urano. Cronos se torna o soberano da Terra e se casa com  a Titã Réia, com a qual tem diversos filhos que ficariam conhecidos como Deuses, sendo eles: Héstia, Deméter, Hera, Hades e Poseidon.  
+            </p>
+            <button class="button_historia" onclick="seguir_1()">Próximo</button>
         </div>
-        <div class="div_header_site">
-            <nav>
-                <ul class="flex align around">
-                    <a href="historia.html"><li class="li_header_site">História</li></a>
-                    <a href="dashboard.html"><li class="li_header_site">Dashboard</li></a>
-                    <a href="jogo.html"><li class="li_header_site">Jogo</li></a>
-                </ul>
-            </nav>
+        <div id="page_2" class="pages cet column" style="display: none;">
+            <p class="p_historia">
+                Temendo que seu fim fosse igual o de seu pai Urano, Cronos decide engolir cada um de seus filhos, até que Réia, já desesperada para proteger o seu útimo filho, decide enganar Cronos e dá a ele uma pedra ao invés da criança. Cronos não percebe a traição e Réia aproveita a oportunidade para enviar seu filho mais novo, chamado Zeus, para uma ilha onde seria criado pelas ninfas, seres da natureza. Anos mais tarde, após ter crescido e ter se tornado poderoso, Zeus sai de sua ilha e vai em busca de Cronos para libertar seus irmãos e irmãs. Ele se disfarça e oferece a Cronos uma bebida que possuía veneno em sua composição. o Titã orgulhoso nunca pensaria que alguém teria coragem de envenená-lo, então ele toma a bebida dada por Zeus e vomita todos os seus filhos já crescidos. Assim, Zeus se revela para Cronos e foge com todos os Deuses para planejarem um ataque. Zeus e os outros se reúnem na montanha mais alta da Grécia, que ficaria conhecida como Monte Olimpo, lá eles criam suas estratégias para travar uma guerra contra os Titãs.
+            </p>
+            <button class="button_historia" onclick="seguir_2()">Próximo</button>
         </div>
-        <div class="div_header_site cet">
-            <button class="button_header" onclick="limparSessao()">Sair</button>
+        <div id="page_3" class="pages cet column" style="display: none;">
+            <p class="p_historia">
+                Ambos os lados se preparam para a guerra, com Zeus liderando os Deuses e Cronos liderando os Titãs, sendo Atlas o capitão do exército dos Titãs. Então o confronto se inicia, a vantagem sendo dos Titãs por serem fisicamente mais fortes que os Deuses. Porém, Zeus já imaginava que ficariam em desvantagem, por isso, antes da batalha ele havia liberto os Ciclopes presos no Tártaro, os Ciclopes que eram ferreiros excepcionais agradeceram os Deuses com três artefatos poderosos: o Raio de Zeus, o Tridente de Poseidon e o Elmo de Hades. Essas três armas fizeram os Deuses se equipararem aos Titãs. Mas mesmo após quase 10 anos de batalha, os Deuses se viam em desvantagem mais uma vez, então Zeus usou sua cartada final, libertar os Hecatônquiros que estavam presos no Tártaro. 
+            </p>
+            <button class="button_historia" onclick="seguir_3()">Próximo</button>
         </div>
-    </header>
+        <div id="page_4" class="pages cet column" style="display: none;">
+            <p class="p_historia">
+                Esses monstros chegaram ao campo de batalha ao lado dos Deuses e apresentaram a sua sua força absurda, fazendo com que os Titãs finalmente perdessem a guerra e no fim, foram todos mandados ao Tártaro pelos Deuses, exceto Atlas, que por ter sido o capitão do exército, recebeu uma punição especial, a de sustentar o peso do mundo nas costas por toda a eternidade.
+                Após terem derrotado os Titãs, os Deuses se tornam os novos soberanos, cada um responsável por algo no mundo, sendo eles: Héstia, Deusa do lar, da lareira, da hospitalidade e da vida doméstica; Deméter, Deusa da agricultura; Hera, Deusa dos casamentos, da família e futuramente esposa de Zeus; Hades, Deus do Submundo; Poseidon, Deus do mares, rios e terremotos; E por último Zeus, que se tornou Deus dos céus, raios, trovões e Deus supremo do Olimpo.
+            </p>
+            <div class="flex around align">
+                <a href="dashboard.html"><button class="button_historia button_duplo_historia">Finalizar</button></a>
+                <a href="jogo.html"><button class="button_historia button_duplo_historia">Jogar</button></a>
+            </div>
+        </div>
+    </main>
 
-    <div>
-        <p>
-            No início dos tempos, quando não havia nada além do Caos,
-            A divindade Gaia surge como a Terra, dela nasce o seu filho
-            Urano e ele se torna seu marido e soberano.
-            Então, Gaia e Urano começam a ter filhos, dando origem às primeiras criaturas
-            do mundo, os Ciclopes e os Ecathonqueros. Logo em seguida surgem os próximos filhos
-            dos dois, Os Titâs, seres de imenso poder. Urano temendo o poder de seus filhos, lança todos
-            eles ao Tártaro, a parte mais profunda da Terra. Em busca de vingança, o Titã Cronos que era o 
-            mais ambicioso de seus irmãos, foge do Tártaro e com a ajuda de sua mãe, castra o seu pai
-            Urano. Cronos se torna o soberano da Terra e se casa com Réia, com a qual tem diversos filhos que ficariam 
-        </p>
-    </div>
+    <script>
+        function seguir_1() {
+            page_1.style.display = 'none'
+            page_2.style.display = 'flex'
+        }
+        function seguir_2() {
+            page_2.style.display = 'none'
+            page_3.style.display = 'flex'
+        }
+        function seguir_3() {
+            page_3.style.display = 'none'
+            page_4.style.display = 'flex'
+        }
+    </script>
 </body>
 </html>

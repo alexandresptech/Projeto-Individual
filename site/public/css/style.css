@@ -19,6 +19,12 @@ a{
 u{
     color: white;
 }
+::-webkit-scrollbar {
+    background-color: black;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(22, 22, 22); 
+}
 
 /* ----- Posição ----- */
 
@@ -266,111 +272,75 @@ footer{
 #div_bem{
     height: 20%;
     width: 100%;
-    background-color: rgb(41, 70, 8);
+}
+#h1_ola{
+    margin-left: 10%;
 }
 .h1_bem{
     font-family: 'Roman';
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
-    margin-left: 10%;
 }
 #div_grafico{
     height: 80%;
     width: 100%;
-    background-color: rgb(19, 77, 95);
 }
 .box_grafico{
-    height: 100%;
+    height: 50%;
     width: 50%;
-    border: 2px solid;
+}
+canvas{
+    height: 50%;
+    width: 50%;
 }
 
-/* ----- Conteúdo ----- */
+/* ----- História ----- */
 
-#div_conteudo{
+#main_historia{
+    height: 100vh;
     width: 100%;
 }
-#nav_conteudo{
-    height: 10vh;
-    width: 90%;
-    background-color: black;
-    border-bottom: 2px solid white;
-    position: fixed;
+#img_x{
+    position: absolute;
+    top: 50px;
+    right: 50px;
 }
-.div_nav_conteudo{
-    width: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
+.pages{
+    height: 100%;
+    width: 100%;
 }
-.div_nav_conteudo h5{
-    font-family: 'EB Garamond', serif;
+.p_historia{
+    font-family: 'EB Garamond', serif; 
     font-weight: 400;
     font-size: 20px;
-    width: auto;
     color: white;
     text-align: center;
-    cursor: pointer;
-}
-#main_conteudo{
-    width: 100%;
-    height: auto;
-}
-.div_conteudo{
-    width: 80%;
-    margin-top: 15vh;
-}
-.div_conteudo_metade{
     width: 50%;
+    animation-name: texto;
+    animation-duration: 5s;
 }
-.box_conteudo{
-    width: 60%;
-    height: 70vh;
-    background-color: white;
-    margin-bottom: 50px;
-    border-radius: 5px;
-}
-.box_conteudo_img{
-    width: 100%;
-    height: 80%;
-}
-.img_conteudo{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px 5px 0px 0px;
-}
-.box_conteudo_titulo{
-    width: 100%;
-    height: 10%;
-}
-.h6_conteudo{
-    font-family: 'Roman';
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
-    color: black;
-}
-.h6_conteudo_historia{
-    font-family: 'Roman';
-    font-weight: 400;
-    font-size: 24px;
-    text-align: center;
-    color: black;
-}
-.box_conteudo_button{
-    width: 100%;
-    height: 10%;
-}
-.button_conteudo{
+.button_historia{
     font-family: 'EB Garamond', serif; 
     font-weight: 400;
     font-size: 20px;
     color: white;
     background-color: black;
+    border: 2px solid white;
     height: 40px;
     width: 100px;
-    margin: 20px;
     cursor: pointer;
+    margin-top: 50px;
+    animation-name: texto;
+    animation-duration: 5s;
+}
+.button_duplo_historia{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+@keyframes texto {
+    from {opacity: 0;}
+    to {opacity: 100;}
 }
 
 /* ----- Jogo ----- */

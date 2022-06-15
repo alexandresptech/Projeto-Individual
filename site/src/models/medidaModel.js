@@ -1,14 +1,21 @@
 var database = require("../database/config");
 
-function inserirModel(pontos, idpontos) {
+function inserirModel(pontoFinal, idusuario) {
     instrucaoSql = `insert into jogo values (
-                    ${pontos},
-                    ${idpontos}
+                    ${idusuario},
+                    ${pontoFinal}
     )`
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
+function buscarPontosModel() {
+    instrucaoSql = `select avg(pontos) as 'Pontos' from jogo`
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
-    inserirModel
+    inserirModel,
+    buscarPontosModel
 }

@@ -7,6 +7,8 @@
     <title>Mitologia Grega</title>
     <link rel="icon" href="../assets/imgs/logo-navegador.png">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
     <header id="header_jogo" class="cet">
@@ -98,17 +100,26 @@
 
     <script>
         var perguntas = [
-            'Qual é a sigla para Central Process Unit?',
-            'Um circuto digital que realiza operações lógicas e aritméticas. Qual é o nome deste componente?',
-            'Tipo de memória que se encontra no topo da hierarquia de memória',
-            'Tipo de memória volátil que tem como nome Random Acess Memory. Qual é a sigla deste componente?',
-            'Tipo de memória não volátil que oferece dados apenas para leitura',
-            'Tipo de memória não volátil que precisa ter seu chip exposto a luz ultravioleta para apagar seu conteúdo',
-            'Tipo particular de EEPROM que mantém as informações armazenadas sem a necessidade de uma fonte de energia elétrica',
-            'Tipo de memória que precisa ter seu conteúdo copiado na RAM para poder ser executado pela CPU'
+            'Quem foi o Titã responsável por lideral o seu exército na guerra?',
+            'Quais foram os seres que fizeram as três armas principais dos Deuses?',
+            'Quem se tornou a esposa de Zeus?',
+            'Quantos anos durou a guerra entre Deuses e Titãs?',
+            'Quem era a divindade que representava a Terra?',
+            'Qual é o nome do lugar mais profundo da Terra, usado como prisão para os Titãs?',
+            'Quem foi o pai de Cronos?',
+            'Qual Deus se tornou soberano dos mares?'
         ]
 
-        var respostas = ['1', '2', '3', '4', '5', '6', '7', '8']
+        var respostas = [
+            'Atlas',
+            'Ciclopes',
+            'Hera',
+            '10',
+            'Gaia',
+            'Tártaro',
+            'Urano',
+            'Poseidon'
+        ]
 
         var criaturas = [
             'Minotauro',  
@@ -201,21 +212,21 @@
                 sequencia()
             }
             else {
-                alert('Por Favor, digite uma resposta na caixa de texto')
+                Swal.fire('Por Favor, digite uma resposta na caixa de texto.')
             }
         }
 
         var idUsuario = sessionStorage.ID_USUARIO
 
         function inserir() {
-            pontos
-            fetch("/medidas/inserirPontos", {
+            var pontoFinal = pontos
+            fetch("../medidas/inserirPontos", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                pontos: pontos,
+                pontoFinal: pontoFinal,
                 idUsuario: idUsuario
             })
             }).then(function (resposta) {

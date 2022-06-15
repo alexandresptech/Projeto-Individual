@@ -12,5 +12,5 @@ create table usuario (
 create table jogo (
 	fkUsuario int,
     foreign key (fkUsuario) references usuario (idUsuario),
-	pontos decimal
+	pontos int
 );
